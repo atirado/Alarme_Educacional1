@@ -13,9 +13,34 @@
     <div class="container">
         <h2>Defina o tempo limite de uso do smartphone (em segundos):</h2>
         <input type="number" id="timeInput" placeholder="Digite o tempo em segundos">
-        <button onclick="startCountdown()">Definir Tempo Limite</button>
-      </div>
-      <script src="script.js"></script>
+        <button onclick="startCountdown()" class="animated-button">Definir Tempo Limite</button>
+        <button onclick="showModal()" class="animated-button">Ver Smartphones Disponíveis</button>
+    </div>
 
+    <!-- Modal -->
+    <div id="myModal" class="modal" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Smartphones Disponíveis para Conexão</h2>
+            <table onclick="event.stopPropagation()">
+                <tr>
+                    <th>Marca</th>
+                </tr>
+                <tr>
+                    <td onclick="connectSmartphone('Samsung')">Samsung</td>
+                    <td onclick="connectSmartphone('Galaxy S20')">Galaxy S20</td>
+                </tr>
+                <tr>
+                    <td onclick="connectSmartphone('Apple')">Apple</td>
+                    <td onclick="connectSmartphone('iPhone 12')">iPhone 12</td>
+                </tr>
+                <!-- Adicione mais linhas conforme necessário -->
+            </table>
+        </div>
+    </div>
+
+    <span id="selectedModel" style="display: none;"></span>
+
+    <script src="script.js"></script>
 </body>
 </html>
